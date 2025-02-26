@@ -1,0 +1,119 @@
+/* === Background Animation === */
+body {
+    background: linear-gradient(45deg, #515151, #5f5f5f, #d3d3d3);
+    background-size: 300% 300%;
+    animation: moveBackground 8s infinite alternate;
+    overflow: hidden;
+}
+
+@keyframes moveBackground {
+    0% { background-position: left; }
+    100% { background-position: right; }
+}
+
+/* === Social Section Styling === */
+#socials {
+    text-align: center;
+    padding: 50px 0;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+
+#socials h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+#socials p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* === Social Buttons === */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    font-size: 35px;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    position: relative;
+}
+
+/* Unique Colors */
+.facebook { background: #1877F2; }
+.twitter { background: #1DA1F2; }
+.instagram { background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5); }
+.email { background: #f39c12; }
+
+/* Hover Effects */
+.social-btn:hover {
+    transform: scale(1.1) rotate(8deg);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Shake Effect on Click */
+.social-btn:active {
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes bounce {
+    0% { transform: scale(1.2) rotate(5deg); }
+    50% { transform: scale(1.1) rotate(-5deg); }
+    100% { transform: scale(1.2) rotate(5deg); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+/* === Floating Particles Effect === */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particles span {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.3);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: float 10s infinite ease-in-out;
+}
+
+/* Position Particles */
+.particles span:nth-child(1) { top: 10%; left: 15%; animation-duration: 12s; }
+.particles span:nth-child(2) { top: 40%; left: 60%; animation-duration: 10s; }
+.particles span:nth-child(3) { top: 70%; left: 80%; animation-duration: 15s; }
+.particles span:nth-child(4) { top: 50%; left: 20%; animation-duration: 8s; }
+.particles span:nth-child(5) { top: 90%; left: 50%; animation-duration: 14s; }
+
+@keyframes float {
+    0% { transform: translateY(0px) scale(1); opacity: 0.6; }
+    50% { transform: translateY(-20px) scale(1.2); opacity: 1; }
+    100% { transform: translateY(0px) scale(1); opacity: 0.6; }
+}
