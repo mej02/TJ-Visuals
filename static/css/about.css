@@ -1,0 +1,348 @@
+body {
+    font-family: 'Oswald', sans-serif;
+}
+
+nav {
+    position: relative; /* Change from fixed to relative */
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+    background-color: #ffffff; 
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    align-items: center;
+    gap: 100px;
+    
+}
+.logo {
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    z-index: 1000; /* Ensures it's above other content */
+}
+.logo img {
+    height: 90px; 
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 30px; /* Remove margin-top if needed */
+    margin-left: 10px; /* Remove margin-left if needed */
+}
+.logo img:hover {
+    opacity: 1; /* Fully visible on hover */
+}
+
+.nav-links {
+    flex-direction: column;
+    list-style: none;
+    gap: 3px;
+    margin: 0;
+    padding-left: 195px;
+    margin-top: -4.5%; /* Reduce the value or use a negative margin */
+}
+
+.nav-top {
+    display: flex;
+    gap: 95px; 
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.nav-links .nav-top li:first-child a,
+.nav-links li:not(:first-child) a {
+    color: black;
+}
+
+
+.nav-top li:nth-child(2) a {
+    color: gray;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-top li:nth-child(2) a:hover {
+    color: black;
+}
+
+.social-sidebar {
+    position: fixed;
+    top: 34%;
+    left: 12px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.social-sidebar a img {
+    width: 24px;
+    height: 23px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.social-sidebar a img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+.container {
+    max-width: 1730px;
+    margin: auto;
+    margin-top: 70px;
+}
+-----------------------------------------------------
+/* Headings */
+p {
+    font-weight: normal;
+    font-size: 5px;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Headings */
+h1, h2 {
+    font-weight: bold;
+    color: #272626;
+}
+
+h1 {
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+/* Highlighted Text */
+.highlight {
+    font-weight: bold;
+    color: #272626;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    p {
+        font-weight: normal;
+        font-size: 5px;
+    }
+}
+
+.book-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px;
+    width: 100%;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px; /* Set smaller font size for column content */
+}
+
+.column h4, .column h2 {
+    font-size: 16px; /* Adjust heading sizes if needed */
+}
+
+.column p {
+    font-size: 14px; /* Set smaller font size for paragraph text */
+    margin: 10px 0;
+}
+
+.highlight {
+    color: #000000; /* Adjust highlight color as needed */
+    font-weight: bold;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center; 
+    gap: 40px;
+    align-items: center;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-align: center;
+}
+
+.social-item img {
+    width: 300px;
+    height: 50px;
+    transition: transform 0.2s ease;
+}
+
+
+.social-item a {
+    color: #000;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.social-item a:hover {
+    color: #4c4d4e; /* Adjust hover color as needed */
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 500px; /* Moves it further down but still visible */
+    left: 500px; /* Increases distance from the social sidebar */
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease;
+}
+
+.back-to-top img {
+    width: 35px;
+    height: 55px;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.info-list {
+    list-style: none; /* Remove default bullets */
+    padding: 0;
+}
+
+.info-list li {
+    font-size: 15px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center; /* Align SVG with text */
+    gap: 5px; /* Space between SVG and text */
+}
+
+/* Use the local SVG file */
+.info-list li::before {
+    content: "";
+    display: inline-block;
+    width: 16px; /* Adjust size if needed */
+    height: 16px;
+    background: url('/static/img/bullet-experience.svg') no-repeat center;
+    background-size: contain;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px; /* Adjusts spacing between columns */
+}
+
+.experience-container1 {
+    flex: 1;
+    max-width: 50%;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin-left: -130px; /* Centers it */
+    margin-right: auto;
+    padding-top: 20px; /* Moves it slightly down */
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.skill-bar {
+    height: 10px;
+    width: 500%;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #353434, #b2aca6);
+    border-radius: 10px;
+    width: 0%; /* Start hidden */
+    transition: width 1.5s ease-in-out;
+}
+
+.skill-fill.animated {
+    width: var(--target-width);
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .book-container {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .social-sidebar {
+        left: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .social-icons {
+        flex-direction: column;
+    }
+
+    .skill-bar {
+        width: 100%;
+    }
+}
+

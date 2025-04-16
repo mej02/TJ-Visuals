@@ -1,543 +1,438 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff;
-    color: #03045E;
-    margin: 0;
-    padding: 0;
-    text-align: center;
+    font-family: 'Oswald', sans-serif;
 }
 
-header {
-    background-color: #ffffff;
-    padding: 20px;
-}
-
-.profile {
-    display: flex;
-    align-items: center; /* Align image & GIF horizontally */
-    gap: 20px; /* Space between image and GIF */
-    justify-content: center;
-    margin-top: 30px; /* Moves both image & GIF down */
-}
-
-.profile-pic {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-top: 20px; /* Moves only the image down */
-}
-
-.name-gif {
-    width: 220px; /* Adjust based on your GIF size */
-    height: auto;
-}
-
-.profile-details {
-    text-align: center;
-    margin-top: 15px; /* Moves name & Instagram button down */
-}
-
-.profile-name {
-    font-size: 15px;
-    font-weight: bold;
-    color: #03045E;
-    margin: 5px 0;
-}
-
-
-.social-link {
-    display: inline-block;
-    padding: 8px 15px;
-    background-color: #000000;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.profile-pic {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 50%; /* Keeps profile pic circular */
-}
-
-
-
-.name-gif {
-    width: 220px; /* Adjust based on your GIF size */
-    height: auto;
-}
-
-.profile-name {
-    font-size: 15px;
-    font-weight: bold;
-    color: #03045E;
-    margin: 20;
-}
-
-.profile h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #000000;
-}
-
-.profile a {
-    display: inline-block;
-    padding: 5px 15px;
-    background-color: #00B4D8;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-.instagram-btn {
-    display: inline-block;
-    background-color: #040404; /* Instagram color */
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px; /* Makes it rounded */
-    text-decoration: none;
-    font-size: 16px;
-  }
-  
-
-
-
-  
-  nav {
-    position: relative;
-    display: flex;
-    justify-content: center;
+nav {
+    position: relative; /* Change from fixed to relative */
     align-items: center;
-    margin-top: 20px;
-    z-index: 10;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
-    position: relative;
-}
-
-nav ul li {
-    position: relative;
-    margin: 0 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-    padding: 10px;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-/* Line Indicator */
-.nav-indicator {
-    position: absolute;
-    bottom: -5px; /* Moves it directly under the text */
-    left: 0;
-    height: 3px;
-    background-color: black;
-    transition: all 0.3s ease;
-}
-
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts for different screen sizes */
-    gap: 10px;
-    padding: 20px;
-    max-width: 90%;
-    margin: auto;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.gallery-item img,
-.gallery-item video {
+    justify-content: space-between;
+    padding: 10px 50px;
+    background-color: #ffffff; 
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
-/* Title Overlay - Hidden by Default */
-.overlay {
+.nav-container {
+    align-items: center;
+    gap: 100px;
+    
+}
+.logo {
+    top: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    z-index: 1000; /* Ensures it's above other content */
+}
+.logo img {
+    height: 90px; 
+    opacity: 0.7;
+    transition: opacity 0.3s ease-in-out;
+    margin-top: 30px; /* Remove margin-top if needed */
+    margin-left: 10px; /* Remove margin-left if needed */
+}
+.logo img:hover {
+    opacity: 1; /* Fully visible on hover */
+}
+
+.nav-links {
+    flex-direction: column;
+    list-style: none;
+    gap: 3px;
+    margin: 0;
+    padding-left: 195px;
+    margin-top: -4.5%; /* Reduce the value or use a negative margin */
+}
+
+.nav-top {
+    display: flex;
+    gap: 95px; 
+}
+
+.nav-links a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.nav-links .nav-top li:first-child a,
+.nav-links li:not(:first-child) a {
+    color: black;
+}
+
+
+.nav-top li:nth-child(2) a {
+    color: gray;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-top li:nth-child(2) a:hover {
+    color: black;
+}
+
+.social-sidebar {
+    position: fixed;
+    top: 34%;
+    left: 12px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.social-sidebar a img {
+    width: 24px;
+    height: 23px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.social-sidebar a img:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+.back-to-top {
+    position: fixed;
+    bottom: -450px; /* Moves it below Twitter */
+    left: 2px; /* Aligns with the social sidebar */
+    opacity: 0.9;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease;
+    z-index: 1000; /* Keeps it above other elements */
+}
+
+.back-to-top img {
+    width: 60px;
+    height: 100px;
+}
+
+.back-to-top:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+@keyframes blink {
+    0% { transform: scaleY(1); }  
+    50% { transform: scaleY(0.1); } 
+    100% { transform: scaleY(1); } 
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px; /* Adjust spacing between cards */
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 40px 20px;
+    max-width: 1530px; /* Adjust width to fit 8 cards */
+    margin: 40px 0 0 40px;
+}
+
+/* Card Styling */
+.card {
+    position: relative;
+    width: calc((100% - 135px) / 10);
+    width: 170px;
+    height: 250px; 
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    transition: transform 0.3s ease-in-out;
+    padding: 0px;
+}
+.card-container::after {
+    content: "";
+    flex: auto;
+}
+
+.card-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark transparent background */
-    color: white;
+    z-index: 2; /* Ensure it's above other elements */
+    background: rgba(0, 0, 0, 0); /* Make it transparent */
+    display: block; /* Ensures it acts as a clickable area */
+    cursor: pointer; /* Changes cursor to indicate it's clickable */
+}
+
+
+
+
+
+/* Eye shape on top */
+.eye {
+    position: absolute;
+    top: 70px; /* Moves it above the card */
+    width: 90px;
+    height: 90px;
+    background: #333; /* Dark color for the eye */
+    border-radius: 50%; /* Makes it circular */
+    border: 5px solid rgb(218, 215, 215); /* Optional border for effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    z-index: 10;
+}
+.eye::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
 }
 
-/* Show Title on Hover */
-.gallery-item:hover .overlay {
-    opacity: 1;
+.card:hover .eye {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+.eye span {
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 
 .footer {
-    background-color: #000000; /* Dark Blue (or use #000 for black) */
-    color: #CAF0F8; /* Light text for contrast */
     text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
-    font-weight: bold;
-    position: relative; /* Keeps it at the bottom */
+    font-size: 5px;
+    color: #585757; /* Black text */
+    font-weight: 300; /* Lighter font */
+    font-family: 'Arial', sans-serif; /* Change if needed */
+    padding: 20px 0; /* Adds spacing */
+    position: relative; /* Keeps it at the bottom of the content */
     width: 100%;
+    background: transparent;
 }
 
-.footer p {
-    margin: 0;
+@media screen and (max-width: 1024px) {
+    .skills-container {
+        width: 80%; /* Make it wider on medium screens */
+    }
 }
 
+@media screen and (max-width: 768px) {
+    .social-icons {
+        flex-direction: column; /* Stack icons vertically */
+        align-items: center;
+        gap: 20px; /* Increase spacing */
+    }
 
-/* Mobile Responsive Menu */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    left: 20px;
+    .social-item {
+        flex-direction: row; /* Keep icon and text side by side */
+        gap: 10px; /* Space between icon and text */
+    }
+
+    .social-item a {
+        font-size: 14px; /* Reduce text size for better fit */
+        word-break: break-word; /* Prevent text from disappearing */
+    }
+
+    .social-item img {
+        width: 30px; /* Scale down icons */
+        height: 30px;
+    }
 }
 
-/* Lightbox (Popup) Styles */
-.lightbox {
-    position: fixed;
-    top: 0;
-    left: 0;
+@media screen and (max-width: 480px) {
+    .social-icons {
+        width: 100%; /* Ensure full width on smaller screens */
+        text-align: center;
+    }
+
+    .social-item a {
+        display: block; /* Stack text below icon if necessary */
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align everything to the left */
+    padding-left: 60px; /* Adjust spacing from the left */
+    padding-top: 105px;
+}
+
+.image-container {
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease-in-out;
+    justify-content: flex-start;
+    overflow: hidden; /* Hides the cropped parts */
 }
 
-.lightbox.active {
-    opacity: 1;
-    pointer-events: auto;
+.image-container img {
+    width: 100%; /* Expands the image */
+    max-width: 1200px; /* Controls size */
+    height: 600px; /* Adjust height to crop into a rectangle */
+    object-fit: cover; /* Crops without stretching */
+    border-radius: 10px; /* Optional */
 }
 
-.lightbox-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
+
+.cropped-image-container {
+    width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    overflow: hidden; /* Ensures cropping */
+    height: 300px; /* Controls the cropping */
 }
 
-.lightbox img, .lightbox video {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+.cropped-image-container img {
+    width: 100%;
+    max-width: 1200px;
+    height: 90%; /* Ensures it fills the defined height */
+    object-fit: cover; /* Crops the image */
+    object-position: bottom; /* Shows the lower part */
+    border-radius: 10px; /* Optional */
 }
 
-.lightbox .close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
+
+.pandora-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 50px; /* Space between columns */
+    max-width: 1100px; /* Set a max width for better structure */
+    margin-left: 0; /* Align to the left */
+    padding-top: 20px;
 }
 
-.lightbox .prev, .lightbox .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 50%;
-    user-select: none;
-}
-
-.lightbox .prev {
-    left: 15px;
-}
-
-.lightbox .next {
-    right: 15px;
-}
-
-/* About Me Section */
-.about-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 20px;
-}
-
-.about-img {
-    width: 300px;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.about-text {
-    flex: 1;
-    text-align: left;
-    color: #333;
-}
-
-.about-text h2 {
-    font-size: 28px;
-    color: #03045E; /* Dark Blue */
-    margin-bottom: 10px;
-}
-
-.about-text p {
+.pandora-container .column {
+    text-align: justify;
     font-size: 16px;
     line-height: 1.6;
-    margin-bottom: 15px;
 }
 
-.about-text a {
-    color: #0077B6; /* Blue */
+.pandora-container .column:first-child {
+    text-align: left;
+}
+
+.pandora-container .column:last-child {
+    text-align: left;
+    padding-left: 40px; /* Adds spacing for readability */
+}
+
+.experience-container {
+    margin-top: -20px; /* Moves section up */
+    text-align: left; /* Align text to the left */
+    margin-left: 55px; /* Adjust the left margin */
+}
+
+.software-list {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+.software-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.software-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Back to Project Button */
+.back-to-project {
+    display: block;
+    margin-top: 50px;
     text-decoration: none;
-    font-weight: bold;
+    color: black;
+    font-size: 14px;
+    font-weight: normal;
+    margin-left: 3px; /* Align with the section */
 }
 
-.about-text a:hover {
+.back-to-project:hover {
     text-decoration: underline;
 }
 
-.recent-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    padding: 20px;
-    max-width: 90%;
-    margin: auto;
-}
 
-.recent-item {
+/* Basic styling for both video containers */
+.video-container {
     position: relative;
-    overflow: hidden;
-    border-radius: 10px;
+    display: block; /* Ensure block-level display */
+    width: 100%;  /* Full width of its parent container */
+    max-width: 1200px;  /* Maximum width */
+    margin: 3px 0 0 0; /* Top margin reduced to bring video closer to the top */
+    padding-left: 0;  /* Remove any left padding if applied elsewhere */
 }
 
-.recent-item img, .recent-item video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease-in-out;
-}
-
-.recent-item img:hover, .recent-item video:hover {
-    transform: scale(1.05);
-}
-
-.recent-item.wide {
-    grid-column: span 2;
-}
-
-.recent-item.tall {
-    grid-row: span 2;
-}
-
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    overflow: auto;
-    text-align: center;
-}
-
-/* Center the image */
-.modal-content {
-    max-width: 90%;
-    max-height: 80vh;
+/* Common styles for both small and large videos */
+.video-container video {
     display: block;
-    margin: auto;
+    width: 100%;  /* Ensure video takes up the full container width */
+    max-width: 100%;  /* Prevent it from exceeding the container size */
+    height: auto;
     border-radius: 10px;
-    object-fit: contain;
+    opacity: 1;
+    animation: fadeIn 1s ease-in-out forwards;
 }
 
-/* Close button */
-.close {
-    position: absolute;
-    top: 20px;
-    right: 40px;
-    font-size: 40px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
+/* Large Video Container: Ensuring large videos scale correctly */
+.large-video video {
+    width: 100%;  /* stretches the video to fill the container */
+    max-width: 1200px;  /* ensures it doesn't get too wide */
+    margin-left: 0;  /* Ensure no centering (left-aligned) */
 }
 
-.close:hover {
-    color: #f2e2d2;
-}
-
-/* Previous and Next Buttons */
-.prev-next {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-}
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: 50px;
-    padding: 10px;
-    font-size: 30px;
-    font-weight: bold;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 5px;
-    transition: 0.3s;
-    user-select: none;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-
-
-.skills-container {
-    max-width: 600px;
-    margin: 30px auto;
-    text-align: left;
-}
-
-.skills-container h2 {
-    text-align: center;
-    color: #000000;
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.skill {
-    margin-bottom: 15px;
-}
-
-.skill p {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-}
-
-.skill-bar {
-    width: 100%;
-    background: #e0e0e0;
-    height: 10px;
-    border-radius: 5px;
-    overflow: hidden;
-    position: relative;
-}
-
-.skill-fill {
-    height: 100%;
-    background: #000000;
-    transition: width 1.5s ease-in-out;
-}
-
-
-/* Responsive Image Modal */
-@media (max-width: 768px) {
-    .modal-content {
-        max-width: 95%;
-        max-height: 70vh;
-    }
-
-    .prev, .next {
-        font-size: 24px;
-        width: 40px;
+/* Keyframe for fade-in animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
     }
 }
 
-
-
-@media screen and (max-width: 768px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    nav ul {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background-color: #fff;
-        position: absolute;
-        top: 50px;
-        left: 0;
-    }
-
-    nav ul.active {
-        display: flex;
-    }
-
-    nav ul li {
-        text-align: center;
-        width: 100%;
-        padding: 10px 0;
-    }
-
-    .nav-indicator {
-        display: none; /* Hide underline in mobile mode */
-    }
+/* Clearfix for ensuring proper alignment when there are multiple elements inside */
+.video-container::after {
+    content: '';
+    display: block;
+    clear: both;
 }
